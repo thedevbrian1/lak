@@ -1,14 +1,17 @@
 import {
   isRouteErrorResponse,
+  Link,
   Links,
   Meta,
+  NavLink,
   Outlet,
   Scripts,
   ScrollRestoration,
 } from "react-router";
 
 import type { Route } from "./+types/root";
-import "./app.css";
+import tailwindStyles from "./styles/app.css?url";
+import { Menu } from "lucide-react";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -19,11 +22,34 @@ export const links: Route.LinksFunction = () => [
   },
   {
     rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+    href: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orelega+One&display=swap",
+  },
+  {
+    rel: "stylesheet",
+    href: tailwindStyles,
   },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  let navLinks = [
+    {
+      path: "/",
+      title: "Home",
+    },
+    {
+      path: "/about",
+      title: "About",
+    },
+    {
+      path: "/legal-services",
+      title: "Legal services",
+    },
+    {
+      path: "/contact",
+      title: "Contact",
+    },
+  ];
+
   return (
     <html lang="en">
       <head>
@@ -32,7 +58,47 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="font-body">
+        <header>
+          <div className="bg-brand-purple py-2">
+            <p className="sr-only">Get in touch</p>
+            <address className="flex justify-center flex-wrap gap-4 text-white">
+              <a
+                href="tel:+254202177175"
+                className="hover:underline transition ease-in-out duration-300"
+              >
+                +254 202 177 175
+              </a>
+              <a
+                href="tel:+254789741957"
+                className="hover:underline transition ease-in-out duration-300"
+              >
+                +254 789 741 957
+              </a>
+              <a
+                href="mailto:info@lakadvocates.com"
+                className="hover:underline transition ease-in-out duration-300"
+              >
+                info@lakadvocates.com
+              </a>
+            </address>
+          </div>
+          <nav className="flex items-center justify-between px-3">
+            <Link to="/">
+              <img src="logo.png" alt="" className="w-20" />
+            </Link>
+            <ul className="hidden lg:flex gap-4">
+              {navLinks.map((item, index) => (
+                <li key={index}>
+                  <NavLink to={item.path}>{item.title}</NavLink>
+                </li>
+              ))}
+            </ul>
+            <button>
+              <Menu />
+            </button>
+          </nav>
+        </header>
         {children}
         <ScrollRestoration />
         <Scripts />
