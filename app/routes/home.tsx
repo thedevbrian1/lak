@@ -36,7 +36,7 @@ function Hero() {
   return (
     <div className="bg-[url('https://images.pexels.com/photos/6077296/pexels-photo-6077296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-cover bg-center bg-no-repeat bg-black/60 bg-blend-overlay w-full h-[70vh] lg:h-[90vh] text-white grid place-items-center">
       <div className="flex flex-col items-center gap-4 px-3 md:max-w-xl ">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-center font-heading">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-center font-heading">
           LAK Advocates
         </h1>
         <p className="text-center md:text-xl text-pretty">
@@ -160,7 +160,7 @@ function Locations() {
           </span>{" "}
           countries
         </p>
-        <ul className="mt-8 grid grid-cols-3 lg:grid-cols-4 gap-4 max-w-sm lg:max-w-lg mx-auto">
+        <ul className="mt-8 grid grid-cols-3 md:grid-cols-4 gap-4 max-w-[280px]  lg:max-w-lg mx-auto">
           {locations.map((item) => (
             <li key={item.id} className="aspect-square">
               <img
@@ -217,7 +217,7 @@ function Clients() {
 
 function HomeContact() {
   return (
-    <div className="mt-24 lg:mt-36 px-6 py-10 md:py-16 lg:py-24 max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto bg-[#333333] text-white rounded-lg">
+    <div className="mt-24 lg:mt-36 px-6 py-14 md:py-16 lg:py-24 max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto bg-[#333333] text-white rounded-lg">
       <h2 className="font-semibold font-heading text-3xl md:text-4xl lg:text-5xl text-center">
         Get in touch with us
       </h2>
