@@ -12,6 +12,26 @@ import {
 import type { Route } from "./+types/root";
 import tailwindStyles from "./styles/app.css?url";
 import { Menu } from "lucide-react";
+import { services } from "./utils/services";
+
+let navLinks = [
+  {
+    path: "/",
+    title: "Home",
+  },
+  {
+    path: "/about",
+    title: "About",
+  },
+  {
+    path: "/legal-services",
+    title: "Legal services",
+  },
+  {
+    path: "/contact",
+    title: "Contact",
+  },
+];
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -31,25 +51,6 @@ export const links: Route.LinksFunction = () => [
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  let navLinks = [
-    {
-      path: "/",
-      title: "Home",
-    },
-    {
-      path: "/about",
-      title: "About",
-    },
-    {
-      path: "/legal-services",
-      title: "Legal services",
-    },
-    {
-      path: "/contact",
-      title: "Contact",
-    },
-  ];
-
   return (
     <html lang="en">
       <head>
@@ -58,7 +59,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="font-body">
+      <body className="font-body bg-[#f5f5f5]">
         <header>
           <div className="bg-brand-purple py-2">
             <p className="sr-only">Get in touch</p>
@@ -83,7 +84,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </a>
             </address>
           </div>
-          <nav className="flex items-center justify-between px-3">
+          <nav className="flex items-center justify-between px-3 md:px-6">
             <Link to="/">
               <img src="logo.png" alt="" className="w-20" />
             </Link>
@@ -94,12 +95,73 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 </li>
               ))}
             </ul>
-            <button>
+            <button className="lg:hidden">
+              <span className="sr-only">Open menu</span>
               <Menu />
             </button>
           </nav>
         </header>
         {children}
+        <footer className="mt-24 lg:mt-36 bg-brand-gold py-12 md:py-20 px-6">
+          <div className="w-28 lg:w-36 mx-auto">
+            <img src="/logo.png" alt="" className="w-full h-full" />
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 mt-8 md:max-w-xl lg:max-w-2xl mx-auto">
+            <div>
+              <h2 className="font-heading text-lg lg:text-2xl">Quick links</h2>
+              <ul className="space-y-2 mt-4 text-gray-800">
+                {navLinks.map((item, index) => (
+                  <li key={index}>
+                    <NavLink
+                      to={item.path}
+                      className="hover:underline transition ease-in-out duration-300"
+                    >
+                      {item.title}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h2 className="font-heading text-lg lg:text-2xl">
+                Legal services
+              </h2>
+              <ul className="mt-4 space-y-2 text-gray-800">
+                {services.slice(0, 5).map((item) => (
+                  <li key={item.id}>
+                    <NavLink
+                      to="/services"
+                      className="hover:underline transition ease-in-out duration-300"
+                    >
+                      {item.title}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h2 className="font-heading text-lg lg:text-2xl">
+                Legal services
+              </h2>
+              <ul className="mt-4 text-gray-800">
+                {services.slice(5).map((item) => (
+                  <li>
+                    <NavLink
+                      key={item.id}
+                      to="/services"
+                      className="hover:underline transition ease-in-out duration-300"
+                    >
+                      {item.title}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <p className="text-center mt-8 text-gray-600">
+            Copyright &copy; {new Date().getFullYear()}
+          </p>
+        </footer>
         <ScrollRestoration />
         <Scripts />
       </body>
