@@ -60,7 +60,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body className="font-body bg-[#f5f5f5]">
-        <header>
+        <header className="fixed top-0 left-0 right-0 z-20">
           <div className="bg-brand-purple py-2">
             <p className="sr-only">Get in touch</p>
             <address className="flex justify-center flex-wrap gap-4 text-white">
@@ -84,9 +84,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </a>
             </address>
           </div>
-          <nav className="flex items-center justify-between px-3 md:px-6">
+          <nav className="flex items-center justify-between px-3 md:px-6 bg-gray-200/60 backdrop-blur">
             <Link to="/">
-              <img src="logo.png" alt="" className="w-20" />
+              <img src="logo.png" alt="" className="w-20 lg:w-28" />
             </Link>
             <ul className="hidden lg:flex gap-4">
               {navLinks.map((item, index) => (
