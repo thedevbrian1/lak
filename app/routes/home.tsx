@@ -1,6 +1,6 @@
 import type { Route } from "./+types/home";
 import { Welcome } from "../welcome/welcome";
-import { Form, Link } from "react-router";
+import { Form, Link, NavLink } from "react-router";
 import { services } from "~/utils/services";
 import { ArrowRight, Mail, Phone } from "lucide-react";
 import FormSpacer from "~/components/FormSpacer";
@@ -67,17 +67,27 @@ function BriefServices() {
 
       <ul className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
         {services.map((item) => (
-          <li key={item.id} className="flex flex-col gap-2">
-            <Link to={`/services/${item.id}`} className="order-1">
-              <h3 className=" font-semibold hover:underline">{item.title}</h3>
-            </Link>
-            <div className="h-52 lg:h-72 relative after:absolute after:-inset-4 after:w-full after:h-full after:bg-[#B668D6] after:-z-10 ml-4 lg:ml-0">
-              <img
-                src={item.imageSrc}
-                alt={`Image of ${item.title}`}
-                className="w-full h-full object-cover"
-              />
-            </div>
+          <li key={item.id} className="item-list">
+            <NavLink
+              to={`/legal-practice/${item.title
+                .toLowerCase()
+                .split(" ")
+                .join("-")}`}
+              prefetch="intent"
+              className="flex flex-col gap-2"
+              viewTransition
+            >
+              <h3 className="order-1 font-semibold hover:underline">
+                {item.title}
+              </h3>
+              <div className="h-52 lg:h-72 relative after:absolute after:-inset-4 after:w-full after:h-full after:bg-[#B668D6] after:-z-10 ml-4 lg:ml-0">
+                <img
+                  src={item.imageSrc}
+                  alt={`Image of ${item.title}`}
+                  className="w-full h-full object-cover hover:scale-105 transition ease-in-out duration-300"
+                />
+              </div>
+            </NavLink>
           </li>
         ))}
       </ul>

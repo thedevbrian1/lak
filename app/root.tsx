@@ -10,6 +10,8 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
+// import "./styles/app.css";
+
 import tailwindStyles from "./styles/app.css?url";
 import { Menu } from "lucide-react";
 import { services } from "./utils/services";
@@ -60,7 +62,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body className="font-body bg-[#f5f5f5]">
-        <header className="fixed top-0 left-0 right-0 z-20">
+        <header
+          className="fixed top-0 left-0 right-0 z-20"
+          style={{ viewTransitionName: "header" }}
+        >
           <div className="bg-brand-purple py-2">
             <p className="sr-only">Get in touch</p>
             <address className="flex justify-center flex-wrap gap-4 text-white">
@@ -145,9 +150,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </h2>
               <ul className="mt-4 text-gray-800">
                 {services.slice(5).map((item) => (
-                  <li>
+                  <li key={item.id}>
                     <NavLink
-                      key={item.id}
                       to="/services"
                       className="hover:underline transition ease-in-out duration-300"
                     >

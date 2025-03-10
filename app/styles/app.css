@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @plugin "tailwindcss-animate";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -140,3 +141,32 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.item-list a.transitioning h2,
+.item-list a.transitioning h3 {
+  view-transition-name: service-title;
+}
+
+.item-list a.transitioning img {
+  view-transition-name: service-image;
+}
+
+.item-list a.transitioning div::after {
+  view-transition-name: service-btn;
+}
+
+.service-detail h1 {
+  view-transition-name: service-title;
+}
+
+.service-detail img {
+  view-transition-name: service-image;
+}
+
+.service-detail button {
+  view-transition-name: service-btn;
+}
+
+/* ::view-transition-group(.service-title) {
+  animation-duration: 3s;
+} */

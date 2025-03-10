@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 import { services } from "~/utils/services";
 
 export default function LegalServices() {
@@ -12,23 +12,29 @@ export default function LegalServices() {
         incidunt quaerat eligendi cupiditate eos praesentium in impedit aliquid
         quam maiores?
       </p>
-      <ul className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <ul className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-10 item-list">
         {services.map((item) => (
-          <li key={item.id} className="flex flex-col gap-2">
-            <Link
-              to={`/legal-practice/${item.title.toLowerCase()}`}
+          <li key={item.id} className="">
+            <NavLink
+              to={`/legal-practice/${item.title
+                .toLowerCase()
+                .split(" ")
+                .join("-")}`}
               prefetch="intent"
-              className="order-1"
+              className="flex flex-col gap-2"
+              viewTransition
             >
-              <h3 className=" font-semibold hover:underline">{item.title}</h3>
-            </Link>
-            <div className="h-52 lg:h-72 relative after:absolute after:-inset-4 after:w-full after:h-full after:bg-[#B668D6] after:-z-10 ml-4 lg:ml-0">
-              <img
-                src={item.imageSrc}
-                alt={`Image of ${item.title}`}
-                className="w-full h-full object-cover"
-              />
-            </div>
+              <h2 className="order-1 font-semibold hover:underline">
+                {item.title}
+              </h2>
+              <div className="h-52 lg:h-72 relative after:absolute after:-inset-4 after:w-full after:h-full after:bg-[#B668D6] after:-z-10 ml-4 lg:ml-0">
+                <img
+                  src={item.imageSrc}
+                  alt={`Image of ${item.title}`}
+                  className="w-full h-full object-cover hover:scale-105 transition ease-in-out duration-300"
+                />
+              </div>
+            </NavLink>
           </li>
         ))}
       </ul>
