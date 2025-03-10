@@ -4,6 +4,13 @@ import { Button } from "~/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router";
 
+export function meta({ data }: Route.MetaArgs) {
+  return [
+    {
+      title: `${data.service?.title} | LAK Advocates`,
+    },
+  ];
+}
 export async function loader({ params }: Route.LoaderArgs) {
   let title = params.title;
 

@@ -1,6 +1,14 @@
 import { Link, NavLink } from "react-router";
 import { services } from "~/utils/services";
 
+export function meta() {
+  return [
+    {
+      title: "Legal practice | LAK Advocates",
+    },
+  ];
+}
+
 export default function LegalServices() {
   return (
     <main className="mt-56 lg:mt-64 px-6 md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto">

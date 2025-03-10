@@ -227,14 +227,14 @@ function Clients() {
 
 function HomeContact() {
   return (
-    <div className="mt-24 lg:mt-36 px-6 py-14 md:py-16 lg:py-24 max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto bg-[#333333] text-white rounded-lg">
+    <div className="mt-24 lg:mt-36 px-6 py-14 md:py-16 lg:py-24 max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto bg-gray-200 dark:bg-[#333333] dark:text-white rounded-lg">
       <h2 className="font-semibold font-heading text-3xl md:text-4xl lg:text-5xl text-center">
         Get in touch with us
       </h2>
       <div className="mt-8 lg:mt-12 flex flex-col gap-4 lg:flex-row lg:justify-center lg:gap-6 mx-auto  lg:max-w-2xl xl:max-w-3xl">
         <div className="grid md:grid-cols-2 lg:grid-cols-1 gap-4 flex-1">
-          <div className="bg-[#474747] p-6 rounded-md md:h-52">
-            <div className="w-12 h-12 grid place-items-center rounded-md bg-[#AA4FCF]">
+          <div className="bg-gray-100 dark:bg-[#474747] p-6 rounded-md md:h-52">
+            <div className="w-12 h-12 grid place-items-center rounded-md bg-[#AA4FCF] text-white">
               <Phone />
             </div>
             <h3 className="text-xl font-semibold mt-4">Call us</h3>
@@ -253,8 +253,8 @@ function HomeContact() {
               </a>
             </address>
           </div>
-          <div className="bg-[#474747] p-6 rounded-md md:h-52">
-            <div className="w-12 h-12 grid place-items-center rounded-md bg-[#AA4FCF]">
+          <div className="bg-gray-100 dark:bg-[#474747] p-6 rounded-md md:h-52">
+            <div className="w-12 h-12 grid place-items-center rounded-md bg-[#AA4FCF] text-white">
               <Mail />
             </div>
             <h3 className="text-xl font-semibold mt-4">Email us</h3>
@@ -269,7 +269,7 @@ function HomeContact() {
           </div>
         </div>
         <span className="self-center">or</span>
-        <div className="md:w-80 md:max-w-sm mx-auto lg:w-auto lg:max-w-none flex-1">
+        <div className="md:w-80 md:max-w-sm mx-auto lg:w-auto lg:max-w-none flex-1 bg-gray-100 p-6 rounded-lg">
           <h3 className="text-xl font-semibold">Send us a message</h3>
           <Form method="post" className="mt-6">
             <fieldset className="space-y-4">

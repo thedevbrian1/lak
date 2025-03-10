@@ -1,3 +1,11 @@
+export function meta() {
+  return [
+    {
+      title: "About | LAK Advocates",
+    },
+  ];
+}
+
 export default function About() {
   let team = [
     {
