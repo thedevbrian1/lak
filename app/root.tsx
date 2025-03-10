@@ -26,7 +26,7 @@ let navLinks = [
     title: "About",
   },
   {
-    path: "/legal-services",
+    path: "/legal-practice",
     title: "Legal services",
   },
   {
@@ -89,7 +89,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </a>
             </address>
           </div>
-          <nav className="flex items-center justify-between px-3 md:px-6 bg-gray-200/60 backdrop-blur">
+          <nav
+            className="flex items-center justify-between px-3 md:px-6 bg-gray-200/80 backdrop-blur-3xl"
+            // style={{ backdropFilter: "blur(20px)" }}
+          >
             <Link to="/">
               <img src="logo.png" alt="" className="w-20 lg:w-28" />
             </Link>

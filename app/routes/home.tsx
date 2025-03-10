@@ -22,7 +22,7 @@ export function loader() {
 
 export default function Home() {
   return (
-    <main>
+    <main className="">
       <Hero />
       <BriefServices />
       <Locations />
@@ -34,7 +34,7 @@ export default function Home() {
 
 function Hero() {
   return (
-    <div className="bg-[url('https://images.pexels.com/photos/6077296/pexels-photo-6077296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-cover bg-center bg-no-repeat bg-black/60 bg-blend-overlay w-full h-[70vh] lg:h-[90vh] text-white grid place-items-center">
+    <div className="pt-40 bg-[url('https://images.pexels.com/photos/6077296/pexels-photo-6077296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-cover bg-center bg-no-repeat bg-black/60 bg-blend-overlay w-full h-[90vh] md:h-[75vh] lg:h-screen text-white grid place-items-center">
       <div className="flex flex-col items-center gap-4 px-3 md:max-w-xl ">
         <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-center font-heading">
           LAK Advocates
