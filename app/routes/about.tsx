@@ -36,7 +36,8 @@ export default function About() {
         Africa, in The United States,in France and the United Kingdom.
       </p>
       <img
-        src="https://images.pexels.com/photos/4427431/pexels-photo-4427431.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        src="/team.jpg"
+        // src="https://images.pexels.com/photos/4427431/pexels-photo-4427431.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         alt=""
         className="w-full lg:max-w-2xl xl:max-w-4xl mx-auto lg:aspect-video object-cover mt-8 lg:mt-12"
       />
@@ -63,11 +64,12 @@ export default function About() {
             Kavere as partners.
           </p>
         </div>
-        <div>
+        <div className="aspect-square ">
           <img
-            src="https://images.pexels.com/photos/336407/pexels-photo-336407.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            src="/partners.jpg"
+            // src="https://images.pexels.com/photos/336407/pexels-photo-336407.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt=""
-            className="w-full h-full object-cover rounded-lg"
+            className="w-full max-w-full h-full object-cover rounded-lg"
           />
         </div>
       </div>
@@ -78,7 +80,7 @@ export default function About() {
         {/* Team members */}
         <ul className="mt-8 grid md:grid-cols-2 gap-6 lg:max-w-xl lg:mx-auto">
           {team.map((item) => (
-            <li>
+            <li key={item.id}>
               <img
                 src={item.imageSrc}
                 alt={`Image of ${item.name}`}
