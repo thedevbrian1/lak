@@ -20,7 +20,11 @@ import {
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "LAK Advocates" },
-    { name: "description", content: "Welcome to React Router!" },
+    {
+      name: "description",
+      content:
+        "Lumallas Achieng' & Kavere Advocates (LAK Advocates) is a full-service law firm in Nairobi, Kenya, offering expertise in dispute resolution, international arbitration, conveyancing, commercial law, and company secretarial services. Our mission is to understand our clients' objectives and exceed their expectations with high-quality, innovative, and result-oriented legal solutions.",
+    },
   ];
 }
 
