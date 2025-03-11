@@ -217,3 +217,28 @@ body {
   animation-timeline: view();
   animation-range: entry 15% cover 30%;
 }
+
+#menu-btn {
+  anchor-name: --mobile-btn;
+}
+
+#mobile-menu {
+  position-anchor: --mobile-btn;
+  /* position-area: block-end; */
+  inset: auto;
+  right: anchor(right);
+  top: anchor(bottom);
+}
+
+#mobile-menu:popover-open {
+  width: 200px;
+  /* height: 100px; */
+  /* position: absolute; */
+  /* position-area: block-end; */
+  /* top: anchor(bottom); */
+
+  /* inset: unset; */
+  /* bottom: 5px;
+  right: 5px; */
+  margin: 0;
+}

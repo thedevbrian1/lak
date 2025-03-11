@@ -13,7 +13,7 @@ import type { Route } from "./+types/root";
 // import "./styles/app.css";
 
 import tailwindStyles from "./styles/app.css?url";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { services } from "./utils/services";
 
 let navLinks = [
@@ -103,10 +103,33 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 </li>
               ))}
             </ul>
-            <button className="lg:hidden">
+            <button
+              id="menu-btn"
+              popoverTarget="mobile-menu"
+              className="lg:hidden"
+            >
               <span className="sr-only">Open menu</span>
               <Menu />
             </button>
+            <div id="mobile-menu" popover="auto" className="p-6 rounded-lg">
+              <div className="flex justify-end">
+                <button
+                  popoverTarget="mobile-menu"
+                  popoverTargetAction="hide"
+                  className="hover:text-red-500 transition ease-in-out duration-300"
+                >
+                  <span className="sr-only">Close menu</span>
+                  <X />
+                </button>
+              </div>
+              <ul className="space-y-4 mt-4">
+                {navLinks.map((item, index) => (
+                  <li key={index}>
+                    <NavLink to={item.path}>{item.title}</NavLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </nav>
         </header>
         {children}
