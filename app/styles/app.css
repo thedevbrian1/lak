@@ -142,6 +142,10 @@ body {
   }
 }
 
+.menu-list-item a.transitioning::after {
+  view-transition-name: menu-list-item;
+}
+
 .item-list a.transitioning h2,
 .item-list a.transitioning h3 {
   view-transition-name: service-title;

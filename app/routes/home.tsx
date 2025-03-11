@@ -73,7 +73,7 @@ export default function Home({ actionData }: Route.ComponentProps) {
 function Hero() {
   // https://images.pexels.com/photos/6077296/pexels-photo-6077296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
   return (
-    <div className="pt-40 bg-[url('/team2.jpg')] bg-cover bg-top bg-no-repeat bg-black/40 bg-blend-overlay w-full h-[90vh] md:h-[75vh] lg:h-screen text-white grid place-items-center">
+    <div className="pt-32 md:pt-20 xl:pt-40 bg-[url('/team2.jpg')] bg-cover bg-top bg-no-repeat bg-black/40 bg-blend-overlay w-full min-h-[90vh] md:h-[75vh] lg:h-screen text-white grid place-items-center">
       <div className="flex flex-col items-center gap-4 px-3 md:max-w-xl ">
         <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-center font-heading">
           LAK Advocates

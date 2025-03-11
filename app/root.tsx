@@ -61,14 +61,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="font-body bg-[#f5f5f5]">
+      <body className="font-body bg-[#f5f5f5] 2xl:max-w-[1400px] mx-auto">
         <header
-          className="fixed top-0 left-0 right-0 z-20"
+          className="fixed top-0 left-0 right-0 z-20 2xl:max-w-[1400px] mx-auto"
           style={{ viewTransitionName: "header" }}
         >
           <div className="bg-brand-purple py-2">
             <p className="sr-only">Get in touch</p>
-            <address className="flex justify-center flex-wrap gap-4 text-white">
+            <address className="flex justify-center flex-wrap gap-x-4 gap-y-2 text-white text-sm lg:text-base">
               <a
                 href="tel:+254202177175"
                 className="hover:underline transition ease-in-out duration-300"
@@ -89,17 +89,27 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </a>
             </address>
           </div>
-          <nav
-            className="flex items-center justify-between px-3 md:px-6 bg-gray-200/80 backdrop-blur-3xl"
-            // style={{ backdropFilter: "blur(20px)" }}
-          >
+          <nav className="flex items-center justify-between px-3 md:px-6 bg-gray-200/80 backdrop-blur-3xl">
             <Link to="/">
-              <img src="logo.png" alt="" className="w-20 lg:w-28" />
+              <img src="logo.png" alt="" className="w-[70px] md:w-24 lg:w-28" />
             </Link>
             <ul className="hidden lg:flex gap-4">
               {navLinks.map((item, index) => (
-                <li key={index}>
-                  <NavLink to={item.path}>{item.title}</NavLink>
+                <li key={index} className="menu-list-item">
+                  <NavLink
+                    to={item.path}
+                    prefetch="intent"
+                    viewTransition
+                    className={({ isActive }) =>
+                      `relative ${
+                        isActive
+                          ? "after:absolute after:-bottom-1.5 after:left-0 after:right-0 after:bg-brand-purple after:h-[2px]"
+                          : ""
+                      } `
+                    }
+                  >
+                    {item.title}
+                  </NavLink>
                 </li>
               ))}
             </ul>
@@ -125,7 +135,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <ul className="space-y-4 mt-4">
                 {navLinks.map((item, index) => (
                   <li key={index}>
-                    <NavLink to={item.path}>{item.title}</NavLink>
+                    <NavLink
+                      to={item.path}
+                      className={({ isActive }) =>
+                        `${isActive ? "text-brand-purple" : ""}`
+                      }
+                    >
+                      {item.title}
+                    </NavLink>
                   </li>
                 ))}
               </ul>
