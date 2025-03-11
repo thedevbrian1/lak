@@ -22,7 +22,7 @@ export default function LegalServices() {
       </p>
       <ul className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-10 item-list">
         {services.map((item) => (
-          <li key={item.id} className="">
+          <li key={item.id} className="fade-in">
             <NavLink
               to={`/legal-practice/${item.title
                 .toLowerCase()

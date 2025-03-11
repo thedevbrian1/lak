@@ -170,3 +170,50 @@ body {
 /* ::view-transition-group(.service-title) {
   animation-duration: 3s;
 } */
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    clip-path: inset(45% 20% 45% 20%);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0% 0% 0% 0%);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.image-reveal {
+  animation: reveal linear both;
+  animation-timeline: view();
+  animation-range: enrty 15% cover 30%;
+}
+
+.revealing-image {
+  /* Create View Timeline */
+  view-timeline-name: --revealing-image;
+  view-timeline-axis: block;
+
+  /* Attach animation, linked to the  View Timeline */
+  animation: linear reveal both;
+  animation-timeline: --revealing-image;
+
+  /* Tweak range when effect should run*/
+  animation-range: entry 25% cover 40%;
+}
+
+.fade-in {
+  animation: slide-in linear both;
+  animation-timeline: view();
+  animation-range: entry 15% cover 30%;
+}

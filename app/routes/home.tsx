@@ -73,7 +73,7 @@ export default function Home({ actionData }: Route.ComponentProps) {
 function Hero() {
   // https://images.pexels.com/photos/6077296/pexels-photo-6077296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
   return (
-    <div className="pt-40 bg-[url('/team2.jpg')] bg-cover bg-top bg-no-repeat bg-black/60 bg-blend-overlay w-full h-[90vh] md:h-[75vh] lg:h-screen text-white grid place-items-center">
+    <div className="pt-40 bg-[url('/team2.jpg')] bg-cover bg-top bg-no-repeat bg-black/40 bg-blend-overlay w-full h-[90vh] md:h-[75vh] lg:h-screen text-white grid place-items-center">
       <div className="flex flex-col items-center gap-4 px-3 md:max-w-xl ">
         <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-center font-heading">
           LAK Advocates
@@ -106,7 +106,7 @@ function BriefServices() {
 
       <ul className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
         {services.map((item) => (
-          <li key={item.id} className="item-list">
+          <li key={item.id} className="item-list fade-in">
             <NavLink
               to={`/legal-practice/${item.title
                 .toLowerCase()
@@ -211,7 +211,7 @@ function Locations() {
         </p>
         <ul className="mt-8 grid grid-cols-3 md:grid-cols-4 gap-4 max-w-[280px]  lg:max-w-lg mx-auto">
           {locations.map((item) => (
-            <li key={item.id} className="aspect-square">
+            <li key={item.id} className="aspect-square fade-in">
               <img
                 src={item.flag}
                 alt={`Flag of ${item.country}`}
@@ -251,7 +251,7 @@ function Clients() {
       </h2>
       <ul className="grid grid-cols-3 gap-4 lg:gap-6 mt-8 lg:max-w-xl mx-auto">
         {clients.map((client) => (
-          <li key={client.id}>
+          <li key={client.id} className="fade-in">
             <img
               src={client.logo}
               alt={`Logo of ${client.title}`}

@@ -39,7 +39,7 @@ export default function About() {
         src="/team.jpg"
         // src="https://images.pexels.com/photos/4427431/pexels-photo-4427431.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         alt=""
-        className="w-full lg:max-w-2xl xl:max-w-4xl mx-auto lg:aspect-video object-cover mt-8 lg:mt-12"
+        className="revealing-image w-full lg:max-w-2xl xl:max-w-4xl mx-auto lg:aspect-video object-cover mt-8 lg:mt-12"
       />
       <div className="bg-[#dddddd] mt-24 lg:mt-36 px-6 md:px-10 py-16 rounded-lg grid lg:grid-cols-2 gap-8">
         <div>
@@ -69,7 +69,7 @@ export default function About() {
             src="/partners.jpg"
             // src="https://images.pexels.com/photos/336407/pexels-photo-336407.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt=""
-            className="w-full max-w-full h-full object-cover rounded-lg"
+            className="w-full max-w-full h-full object-cover rounded-lg revealing-image"
           />
         </div>
       </div>
@@ -80,7 +80,7 @@ export default function About() {
         {/* Team members */}
         <ul className="mt-8 grid md:grid-cols-2 gap-6 lg:max-w-xl lg:mx-auto">
           {team.map((item) => (
-            <li key={item.id}>
+            <li key={item.id} className="fade-in">
               <img
                 src={item.imageSrc}
                 alt={`Image of ${item.name}`}
