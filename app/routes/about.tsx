@@ -18,7 +18,8 @@ export default function About() {
       id: 2,
       name: "Paulette Achieng",
       title: "Partner",
-      imageSrc: "/paulette.png",
+      imageSrc:
+        "https://res.cloudinary.com/organic-zones/image/upload/q_auto,f_auto/v1741703202/lak/paulette_ntmtg2.png",
     },
   ];
   return (
@@ -36,7 +37,7 @@ export default function About() {
         Africa, in The United States,in France and the United Kingdom.
       </p>
       <img
-        src="/team.jpg"
+        src="https://res.cloudinary.com/organic-zones/image/upload/q_auto,f_auto/v1741703213/lak/team_qmel2r.jpg"
         // src="https://images.pexels.com/photos/4427431/pexels-photo-4427431.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         alt=""
         className="revealing-image w-full lg:max-w-2xl xl:max-w-4xl mx-auto lg:aspect-video object-cover mt-8 lg:mt-12"
@@ -66,7 +67,7 @@ export default function About() {
         </div>
         <div className="aspect-square ">
           <img
-            src="/partners.jpg"
+            src="https://res.cloudinary.com/organic-zones/image/upload/q_auto,f_auto/v1741703211/lak/partners_pzj9u2.jpg"
             // src="https://images.pexels.com/photos/336407/pexels-photo-336407.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt=""
             className="w-full max-w-full h-full object-cover rounded-lg revealing-image"
