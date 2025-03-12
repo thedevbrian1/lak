@@ -270,131 +270,135 @@ function Clients() {
 
 function HomeContact({ fieldErrors }) {
   return (
-    <div className="mt-24 lg:mt-36 px-6 py-14 md:py-16 lg:py-24 max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto bg-gray-200 dark:bg-[#333333] dark:text-white rounded-lg">
-      <h2 className="font-semibold font-heading text-3xl md:text-4xl lg:text-5xl text-center">
-        Get in touch with us
-      </h2>
-      <div className="mt-8 lg:mt-12 flex flex-col gap-4 lg:flex-row lg:justify-center lg:gap-6 mx-auto  lg:max-w-2xl xl:max-w-3xl">
-        <div className="grid md:grid-cols-2 lg:grid-cols-1 gap-4 flex-1">
-          <div className="bg-gray-100 dark:bg-[#474747] p-6 rounded-md md:h-52">
-            <div className="w-12 h-12 grid place-items-center rounded-md bg-[#AA4FCF] text-white">
-              <Phone />
+    <div className="mt-24 lg:mt-36 px-6  md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto">
+      <div className="bg-gray-200 dark:bg-[#333333] dark:text-white py-14 md:py-16 lg:py-24 rounded-lg">
+        <h2 className="font-semibold font-heading text-3xl md:text-4xl lg:text-5xl text-center">
+          Get in touch with us
+        </h2>
+        <div className="mt-8 lg:mt-12 flex flex-col gap-4 lg:flex-row lg:justify-center lg:gap-6 mx-auto  lg:max-w-2xl xl:max-w-3xl px-4 md:px-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-1 gap-4 flex-1 ">
+            <div className="bg-gray-100 dark:bg-[#474747] p-6 rounded-md md:h-52">
+              <div className="w-12 h-12 grid place-items-center rounded-md bg-[#AA4FCF] text-white">
+                <Phone />
+              </div>
+              <h3 className="text-xl font-semibold mt-4">Call us</h3>
+              <address className="flex flex-col gap-2 mt-4">
+                <a
+                  href="tel:+254202177175"
+                  className="hover:underline transition ease-in-out duration-300"
+                >
+                  +254 202 177 175
+                </a>
+                <a
+                  href="tel:+254789741957"
+                  className="hover:underline transition ease-in-out duration-300"
+                >
+                  +254 789 741 957
+                </a>
+              </address>
             </div>
-            <h3 className="text-xl font-semibold mt-4">Call us</h3>
-            <address className="flex flex-col gap-2 mt-4">
-              <a
-                href="tel:+254202177175"
-                className="hover:underline transition ease-in-out duration-300"
-              >
-                +254 202 177 175
-              </a>
-              <a
-                href="tel:+254789741957"
-                className="hover:underline transition ease-in-out duration-300"
-              >
-                +254 789 741 957
-              </a>
-            </address>
-          </div>
-          <div className="bg-gray-100 dark:bg-[#474747] p-6 rounded-md md:h-52">
-            <div className="w-12 h-12 grid place-items-center rounded-md bg-[#AA4FCF] text-white">
-              <Mail />
+            <div className="bg-gray-100 dark:bg-[#474747] p-6 rounded-md md:h-52">
+              <div className="w-12 h-12 grid place-items-center rounded-md bg-[#AA4FCF] text-white">
+                <Mail />
+              </div>
+              <h3 className="text-xl font-semibold mt-4">Email us</h3>
+              <address className="mt-4">
+                <a
+                  href="mailto:info@lakadvocates.com"
+                  className="hover:underline transition ease-in-out duration-300"
+                >
+                  info@lakadvocates.com
+                </a>
+              </address>
             </div>
-            <h3 className="text-xl font-semibold mt-4">Email us</h3>
-            <address className="mt-4">
-              <a
-                href="mailto:info@lakadvocates.com"
-                className="hover:underline transition ease-in-out duration-300"
-              >
-                info@lakadvocates.com
-              </a>
-            </address>
           </div>
-        </div>
-        <span className="self-center">or</span>
-        <div className="md:w-80 md:max-w-sm mx-auto lg:w-auto lg:max-w-none flex-1 bg-gray-100 p-6 rounded-lg">
-          <h3 className="text-xl font-semibold">Send us a message</h3>
-          <Form method="post" className="mt-6">
-            <fieldset className="space-y-4">
-              <FormSpacer>
-                <Label htmlFor="name" className="flex gap-2">
-                  Full name{" "}
-                  {fieldErrors?.name ? (
-                    <span className="text-red-500">{fieldErrors.name}</span>
-                  ) : (
-                    ""
-                  )}
-                </Label>
-                <Input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="John Doe"
-                  className={`border border-gray-400 focus-visible:ring-2 focus-visible:ring-brand-purple ${
-                    fieldErrors?.name ? "border-red-500" : ""
-                  }`}
-                />
-              </FormSpacer>
-              <FormSpacer>
-                <Label htmlFor="email" className="flex gap-2">
-                  Email{" "}
-                  {fieldErrors?.email ? (
-                    <span className="text-red-500">{fieldErrors.email}</span>
-                  ) : (
-                    ""
-                  )}
-                </Label>
-                <Input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="johndoe@email.com"
-                  className={`border border-gray-400 focus-visible:ring-2 focus-visible:ring-brand-purple ${
-                    fieldErrors?.email ? "border-red-500" : ""
-                  }`}
-                />
-              </FormSpacer>
-              <FormSpacer>
-                <Label htmlFor="phone" className="flex gap-2">
-                  Phone{" "}
-                  {fieldErrors?.phone ? (
-                    <span className="text-red-500">{fieldErrors.phone}</span>
-                  ) : (
-                    ""
-                  )}
-                </Label>
-                <Input
-                  type="text"
-                  id="phone"
-                  name="phone"
-                  placeholder="+254 712 345 678"
-                  className={`border border-gray-400 focus-visible:ring-2 focus-visible:ring-brand-purple ${
-                    fieldErrors?.phone ? "border-red-500" : ""
-                  }`}
-                />
-              </FormSpacer>
-              <FormSpacer>
-                <Label htmlFor="message" className="flex gap-2">
-                  Message{" "}
-                  {fieldErrors?.message ? (
-                    <span className="text-red-500">{fieldErrors.message}</span>
-                  ) : (
-                    ""
-                  )}
-                </Label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  className={`border border-gray-400 focus-visible:ring-2 focus-visible:ring-brand-purple ${
-                    fieldErrors?.message ? "border-red-500" : ""
-                  }`}
-                />
-              </FormSpacer>
-              <Button className="w-full bg-brand-purple hover:bg-purple-500 transition ease-in-out duration-300">
-                Send message
-              </Button>
-            </fieldset>
-          </Form>
+          <span className="self-center">or</span>
+          <div className="md:w-96 md:mx-auto lg:w-auto  flex-1 bg-gray-100 p-6 rounded-lg">
+            <h3 className="text-xl font-semibold">Send us a message</h3>
+            <Form method="post" className="mt-6">
+              <fieldset className="space-y-4">
+                <FormSpacer>
+                  <Label htmlFor="name" className="flex gap-2">
+                    Full name{" "}
+                    {fieldErrors?.name ? (
+                      <span className="text-red-500">{fieldErrors.name}</span>
+                    ) : (
+                      ""
+                    )}
+                  </Label>
+                  <Input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="John Doe"
+                    className={`border border-gray-400 focus-visible:ring-2 focus-visible:ring-brand-purple ${
+                      fieldErrors?.name ? "border-red-500" : ""
+                    }`}
+                  />
+                </FormSpacer>
+                <FormSpacer>
+                  <Label htmlFor="email" className="flex gap-2">
+                    Email{" "}
+                    {fieldErrors?.email ? (
+                      <span className="text-red-500">{fieldErrors.email}</span>
+                    ) : (
+                      ""
+                    )}
+                  </Label>
+                  <Input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="johndoe@email.com"
+                    className={`border border-gray-400 focus-visible:ring-2 focus-visible:ring-brand-purple ${
+                      fieldErrors?.email ? "border-red-500" : ""
+                    }`}
+                  />
+                </FormSpacer>
+                <FormSpacer>
+                  <Label htmlFor="phone" className="flex gap-2">
+                    Phone{" "}
+                    {fieldErrors?.phone ? (
+                      <span className="text-red-500">{fieldErrors.phone}</span>
+                    ) : (
+                      ""
+                    )}
+                  </Label>
+                  <Input
+                    type="text"
+                    id="phone"
+                    name="phone"
+                    placeholder="+254 712 345 678"
+                    className={`border border-gray-400 focus-visible:ring-2 focus-visible:ring-brand-purple ${
+                      fieldErrors?.phone ? "border-red-500" : ""
+                    }`}
+                  />
+                </FormSpacer>
+                <FormSpacer>
+                  <Label htmlFor="message" className="flex gap-2">
+                    Message{" "}
+                    {fieldErrors?.message ? (
+                      <span className="text-red-500">
+                        {fieldErrors.message}
+                      </span>
+                    ) : (
+                      ""
+                    )}
+                  </Label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    className={`border border-gray-400 focus-visible:ring-2 focus-visible:ring-brand-purple ${
+                      fieldErrors?.message ? "border-red-500" : ""
+                    }`}
+                  />
+                </FormSpacer>
+                <Button className="w-full bg-brand-purple hover:bg-purple-500 transition ease-in-out duration-300">
+                  Send message
+                </Button>
+              </fieldset>
+            </Form>
+          </div>
         </div>
       </div>
     </div>

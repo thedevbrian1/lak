@@ -1,6 +1,6 @@
 export let services = [
   {
-    title: "International & local litigation",
+    title: "International & domestic litigation",
     imageSrc:
       "https://images.pexels.com/photos/4427611/pexels-photo-4427611.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     description: "",
