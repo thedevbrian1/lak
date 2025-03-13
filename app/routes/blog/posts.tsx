@@ -13,8 +13,6 @@ export async function loader() {
   let res = await fetch("https://lakadvocates.com/wp-json/wp/v2/posts");
   let data = await res.json();
 
-  // console.log({ data });
-
   let posts = await Promise.all(
     data.map(async (item) => {
       let imgRes = await fetch(
@@ -33,7 +31,6 @@ export async function loader() {
 
 export default function Posts({ loaderData }: Route.ComponentProps) {
   let { posts } = loaderData;
-  // console.log({ posts });
   return (
     <main className="mt-56 lg:mt-64 px-6 md:max-w-xl lg:max-w-4xl xl:max-w-6xl mx-auto">
       <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-center font-heading">

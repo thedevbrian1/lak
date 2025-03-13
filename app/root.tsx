@@ -33,6 +33,10 @@ let navLinks = [
     path: "/contact",
     title: "Contact",
   },
+  {
+    path: "/posts",
+    title: "Posts",
+  },
 ];
 
 export const links: Route.LinksFunction = () => [

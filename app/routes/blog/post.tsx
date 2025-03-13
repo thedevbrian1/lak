@@ -24,8 +24,6 @@ export async function loader({ params }: Route.LoaderArgs) {
   );
   let img = await imgRes.json();
 
-  console.log({ img });
-
   let post = { ...data[0], imgSrc: img.source_url };
 
   return { post };
@@ -33,7 +31,6 @@ export async function loader({ params }: Route.LoaderArgs) {
 
 export default function Post({ loaderData }: Route.ComponentProps) {
   let { post } = loaderData;
-  console.log({ post });
   let navigate = useNavigate();
 
   return (
