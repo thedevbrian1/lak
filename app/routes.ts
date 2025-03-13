@@ -6,4 +6,6 @@ export default [
   route("contact", "routes/contact.tsx"),
   route("legal-practice", "routes/legal-practice/services.tsx"),
   route("legal-practice/:title", "routes/legal-practice/service.tsx"),
+  route("posts", "routes/blog/posts.tsx"),
+  route("posts/:slug", "routes/blog/post.tsx"),
 ] satisfies RouteConfig;

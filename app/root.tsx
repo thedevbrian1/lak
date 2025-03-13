@@ -91,7 +91,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </div>
           <nav className="flex items-center justify-between px-3 md:px-6 bg-gray-200/80 backdrop-blur-3xl">
             <Link to="/">
-              <img src="logo.png" alt="" className="w-[70px] md:w-24 lg:w-28" />
+              <img
+                src="/logo.png"
+                alt=""
+                className="w-[70px] md:w-24 lg:w-28"
+              />
             </Link>
             <ul className="hidden lg:flex gap-4">
               {navLinks.map((item, index) => (

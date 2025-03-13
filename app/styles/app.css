@@ -175,6 +175,22 @@ body {
   animation-duration: 3s;
 } */
 
+.post-item a.transitioning img {
+  view-transition-name: post-image;
+}
+
+.post-item a.transitioning h2 {
+  view-transition-name: post-title;
+}
+
+.post-detail h1 {
+  view-transition-name: post-title;
+}
+
+.post-detail img {
+  view-transition-name: post-image;
+}
+
 @keyframes reveal {
   from {
     opacity: 0;
