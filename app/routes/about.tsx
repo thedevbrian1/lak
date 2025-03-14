@@ -1,3 +1,6 @@
+import { ArrowRight } from "lucide-react";
+import { NavLink } from "react-router";
+
 export function meta() {
   return [
     {
@@ -89,6 +92,15 @@ export default function About() {
               />
               <p className="mt-4 font-semibold">{item.name}</p>
               <p className="mt-2 text-gray-700">{item.title}</p>
+              <NavLink
+                to={`/partners/${item.name.toLowerCase().split(" ").join("-")}`}
+                className="flex gap-2 items-center bg-brand-purple group  px-4 py-2 rounded-md max-w-fit text-white mt-2 text-sm"
+              >
+                View more{" "}
+                <span className="group-hover:translate-x-1 transition-all ease-in-out duration-300">
+                  <ArrowRight />
+                </span>{" "}
+              </NavLink>
             </li>
           ))}
         </ul>
