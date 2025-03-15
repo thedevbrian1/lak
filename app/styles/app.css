@@ -191,6 +191,30 @@ body {
   view-transition-name: post-image;
 }
 
+.partner a.transitioning img {
+  view-transition-name: partner-image;
+}
+
+.partner a.transitioning .partner-name {
+  view-transition-name: partner-name;
+}
+
+.partner a.transitioning a > span {
+  view-transition-name: partner-btn;
+}
+
+.partner-detail h1 {
+  view-transition-name: partner-name;
+}
+
+.partner-detail img {
+  view-transition-name: partner-image;
+}
+
+.partner-detail .partner-img::after {
+  view-transition-name: partner-btn;
+}
+
 @keyframes reveal {
   from {
     opacity: 0;
