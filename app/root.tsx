@@ -64,6 +64,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
+        <script src="./polyfills/popover.min.js" type="module" defer></script>
       </head>
       <body className="font-body bg-[#f5f5f5] 2xl:max-w-[1400px] mx-auto">
         <header
