@@ -29,10 +29,12 @@ export default function Service({ loaderData }: Route.ComponentProps) {
   return (
     <main className="mt-56 px-6 md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto service-detail">
       <Button
-        className="flex items-center gap-2 bg-brand-purple hover:bg-purple-500 active:scale-[.97] transition ease-in-out duration-300"
+        className=" bg-brand-purple hover:bg-purple-500 active:scale-[.97] transition ease-in-out duration-300"
         onClick={() => navigate(-1)}
       >
-        <ArrowLeft /> Back to services
+        <span className="flex items-center gap-2">
+          <ArrowLeft /> Back to services
+        </span>
       </Button>
       <h1 className="mt-8 text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-center font-heading">
         {service?.title}

@@ -35,11 +35,11 @@ export default function LegalServices() {
               <h2 className="order-1 font-semibold hover:underline">
                 {item.title}
               </h2>
-              <div className="h-52 lg:h-72 relative after:absolute after:-inset-4 after:w-full after:h-full after:bg-[#B668D6] after:-z-10 ml-4 lg:ml-0">
+              <div className="h-52 lg:h-72 relative after:absolute after:-inset-4 after:w-full after:h-full after:bg-[#B668D6] after:-z-10 after:rounded-lg ml-4 lg:ml-0">
                 <img
                   src={item.imageSrc}
                   alt={`Image of ${item.title}`}
-                  className="w-full h-full object-cover hover:scale-105 transition ease-in-out duration-300"
+                  className="w-full h-full object-cover hover:scale-105 transition ease-in-out duration-300 rounded-lg"
                 />
               </div>
             </NavLink>

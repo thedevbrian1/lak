@@ -171,6 +171,15 @@ body {
   view-transition-name: service-btn;
 }
 
+.service-detail button span {
+  view-transition-name: service-btn-text;
+}
+
+::view-transition-old(service-btn),
+::view-transition-new(service-btn) {
+  height: 100%;
+}
+
 /* ::view-transition-group(.service-title) {
   animation-duration: 3s;
 } */
