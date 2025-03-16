@@ -54,11 +54,11 @@ export default function Service({ loaderData }: Route.ComponentProps) {
       <div className="mt-8  lg:max-w-xl xl:max-w-2xl aspect-video mx-auto">
         <img
           src={serviceImageUrl}
-          alt=""
+          alt={`Image of ${service[0].name}`}
           className="w-full h-full rounded-lg object-cover object-center"
         />
       </div>
-      <div className="prose mt-8 lg:mt-16 text-center mx-auto">
+      <div className="prose mt-8 lg:mt-16 text-center mx-auto w-full">
         {Array.isArray(service[0].details) && (
           <PortableText value={service[0].details} />
         )}

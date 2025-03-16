@@ -1,5 +1,4 @@
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
 import { Form, isRouteErrorResponse, Link, NavLink } from "react-router";
 import { services } from "~/utils/services";
 import { ArrowRight, Mail, Phone, RotateCcw } from "lucide-react";
@@ -16,6 +15,8 @@ import {
   validatePhone,
   validateText,
 } from "~/.server/validation";
+import { client, urlFor } from "~/sanity/client";
+import type { SanityDocument } from "@sanity/client";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -28,8 +29,11 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export function loader() {
-  return { message: "Hello from Vercel" };
+export async function loader() {
+  let services = await client.fetch<SanityDocument>(
+    `*[_type == 'legalService']{_id, slug{current}, image, name} `
+  );
+  return { services };
 }
 
 export async function action({ request }: Route.ActionArgs) {
@@ -54,7 +58,9 @@ export async function action({ request }: Route.ActionArgs) {
   return null;
 }
 
-export default function Home({ actionData }: Route.ComponentProps) {
+export default function Home({ actionData, loaderData }: Route.ComponentProps) {
+  let { services } = loaderData;
+
   let fieldErrors;
   if (
     actionData &&
@@ -66,7 +72,7 @@ export default function Home({ actionData }: Route.ComponentProps) {
   return (
     <main className="">
       <Hero />
-      <BriefServices />
+      <BriefServices services={services} />
       <Locations />
       <Clients />
       <HomeContact fieldErrors={fieldErrors} />
@@ -97,7 +103,7 @@ function Hero() {
   );
 }
 
-function BriefServices() {
+function BriefServices({ services }) {
   return (
     <div className="mt-24 lg:mt-36 px-6 md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto">
       <h2 className="font-semibold font-heading text-3xl md:text-4xl lg:text-5xl text-center">
@@ -109,24 +115,21 @@ function BriefServices() {
       </p>
 
       <ul className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-        {services.map((item) => (
-          <li key={item.id} className="item-list fade-in">
+        {services.slice(0, 6).map((item) => (
+          <li key={item._id} className="item-list fade-in">
             <NavLink
-              to={`/legal-practice/${item.title
-                .toLowerCase()
-                .split(" ")
-                .join("-")}`}
+              to={`/legal-practice/${item.slug.current}`}
               prefetch="intent"
               className="flex flex-col gap-2"
               viewTransition
             >
               <h3 className="order-1 font-semibold hover:underline">
-                {item.title}
+                {item.name}
               </h3>
               <div className="h-52 lg:h-72 relative after:absolute after:-inset-4 after:w-full after:h-full after:bg-[#B668D6] after:-z-10 after:rounded-lg ml-4 lg:ml-0">
                 <img
-                  src={item.imageSrc}
-                  alt={`Image of ${item.title}`}
+                  src={urlFor(item.image)?.width(550).auto("format").url()}
+                  alt={`Image of ${item.name}`}
                   className="w-full h-full object-cover hover:scale-105 transition ease-in-out duration-300 rounded-lg"
                   loading="lazy"
                 />
@@ -137,7 +140,8 @@ function BriefServices() {
       </ul>
       <div className="flex justify-center mt-8">
         <Link
-          to="/services"
+          to="/legal-practice"
+          prefetch="intent"
           className="underline flex gap-2 items-center group"
         >
           View all services{" "}
