@@ -40,6 +40,7 @@ export default function LegalServices() {
                   src={item.imageSrc}
                   alt={`Image of ${item.title}`}
                   className="w-full h-full object-cover hover:scale-105 transition ease-in-out duration-300 rounded-lg"
+                  loading="lazy"
                 />
               </div>
             </NavLink>

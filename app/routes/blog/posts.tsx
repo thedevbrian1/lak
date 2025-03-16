@@ -52,7 +52,8 @@ export default function Posts({ loaderData }: Route.ComponentProps) {
                 <img
                   src={item.imgSrc}
                   alt={`Image of ${item.title.rendered}`}
-                  className="aspect-[4/3] object-cover object-center rounded-t-lg hover:scale-105 transition ease-in-out duration-300"
+                  className="w-full aspect-[4/3] object-cover object-center rounded-t-lg hover:scale-105 transition ease-in-out duration-300"
+                  loading="lazy"
                 />
                 <div className="p-4">
                   <h2 className="mt-2 font-semibold hover:underline transition ease-in-out duration-300">

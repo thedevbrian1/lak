@@ -77,7 +77,7 @@ export default function Home({ actionData }: Route.ComponentProps) {
 function Hero() {
   // https://images.pexels.com/photos/6077296/pexels-photo-6077296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
   return (
-    <div className="pt-32 md:pt-20 xl:pt-40 bg-[url('https://res.cloudinary.com/organic-zones/image/upload/q_auto,f_auto/v1741703207/lak/team2_kli9zs.jpg')] bg-cover bg-top bg-no-repeat bg-black/40 bg-blend-overlay w-full min-h-[90vh] md:h-[75vh] lg:h-screen text-white grid place-items-center">
+    <div className="pt-32 md:pt-20 xl:pt-40 bg-[url('https://res.cloudinary.com/organic-zones/image/upload/q_auto,f_auto,w_600/v1741703207/lak/team2_kli9zs.jpg')] md:bg-[url('https://res.cloudinary.com/organic-zones/image/upload/q_auto,f_auto,w_900/v1741703207/lak/team2_kli9zs.jpg')] lg:bg-[url('https://res.cloudinary.com/organic-zones/image/upload/q_auto,f_auto,w_1200/v1741703207/lak/team2_kli9zs.jpg')] 2xl:bg-[url('https://res.cloudinary.com/organic-zones/image/upload/q_auto,f_auto/v1741703207/lak/team2_kli9zs.jpg')] bg-cover bg-top bg-no-repeat bg-black/40 bg-blend-overlay w-full min-h-[90vh] md:h-[75vh] lg:h-screen text-white grid place-items-center">
       <div className="flex flex-col items-center gap-4 px-3 md:max-w-xl ">
         <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-center font-heading">
           LAK Advocates
@@ -128,6 +128,7 @@ function BriefServices() {
                   src={item.imageSrc}
                   alt={`Image of ${item.title}`}
                   className="w-full h-full object-cover hover:scale-105 transition ease-in-out duration-300 rounded-lg"
+                  loading="lazy"
                 />
               </div>
             </NavLink>
@@ -220,6 +221,7 @@ function Locations() {
                 src={item.flag}
                 alt={`Flag of ${item.country}`}
                 className="rounded-full w-full h-full object-cover"
+                loading="lazy"
               />
             </li>
           ))}
@@ -260,6 +262,7 @@ function Clients() {
               src={client.logo}
               alt={`Logo of ${client.title}`}
               className="w-full h-full"
+              loading="lazy"
             />
           </li>
         ))}

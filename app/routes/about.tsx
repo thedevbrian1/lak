@@ -52,7 +52,7 @@ export default function About({ loaderData }: Route.ComponentProps) {
         Africa, in The United States,in France and the United Kingdom.
       </p>
       <img
-        src="https://res.cloudinary.com/organic-zones/image/upload/q_auto,f_auto/v1741703213/lak/team_qmel2r.jpg"
+        src="https://res.cloudinary.com/organic-zones/image/upload/q_auto,f_auto/w_1000/v1741703213/lak/team_qmel2r.jpg"
         // src="https://images.pexels.com/photos/4427431/pexels-photo-4427431.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         alt=""
         className="revealing-image w-full lg:max-w-2xl xl:max-w-4xl mx-auto lg:aspect-video object-cover mt-8 lg:mt-12"
@@ -82,10 +82,11 @@ export default function About({ loaderData }: Route.ComponentProps) {
         </div>
         <div className="aspect-square ">
           <img
-            src="https://res.cloudinary.com/organic-zones/image/upload/q_auto,f_auto/v1741703211/lak/partners_pzj9u2.jpg"
+            src="https://res.cloudinary.com/organic-zones/image/upload/q_auto,f_auto/w_500/v1741703211/lak/partners_pzj9u2.jpg"
             // src="https://images.pexels.com/photos/336407/pexels-photo-336407.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt=""
             className="w-full max-w-full h-full object-cover rounded-lg revealing-image"
+            loading="lazy"
           />
         </div>
       </div>
@@ -108,6 +109,7 @@ export default function About({ loaderData }: Route.ComponentProps) {
                     src={urlFor(item.image)?.width(550).auto("format").url()}
                     alt={`Image of ${item.name}`}
                     className="h-72 w-full max-w-lg lg:max-w-none object-cover object-top lg:h-auto aspect-[3/4] lg:object-center rounded-lg"
+                    loading="lazy"
                   />
                 </div>
                 <p className="mt-4 font-semibold">{item.name}</p>
@@ -140,6 +142,7 @@ export default function About({ loaderData }: Route.ComponentProps) {
               src="https://images.pexels.com/photos/6457521/pexels-photo-6457521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               alt=""
               className="w-full h-full object-cover rounded-lg"
+              loading="lazy"
             />
           </div>
         </div>
@@ -158,6 +161,7 @@ export default function About({ loaderData }: Route.ComponentProps) {
               src="https://images.pexels.com/photos/45072/pexels-photo-45072.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               alt=""
               className="w-full h-full object-cover rounded-lg"
+              loading="lazy"
             />
           </div>
         </div>
