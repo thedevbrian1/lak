@@ -21,6 +21,11 @@ export function meta() {
     {
       title: "Contact | LAK Advocates",
     },
+    {
+      name: "description",
+      content:
+        "Connect with Lumallas Achieng' & Kavere Advocates (LAK Advocates) for expert legal services in Kenya. Reach us at +254 202 177 175 or +254 789 741 957, or email info@lakadvocates.com. Our Nairobi office is located at Wu Yi Plaza, Fifth Floor, Suite F15, Galana Rd, Kilimani, and our Western office is in the Agricultural Finance Corporation Building, Kakamega. We are committed to responding promptly, typically within one hour",
+    },
   ];
 }
 

@@ -232,6 +232,28 @@ body {
   view-transition-name: partner-btn;
 }
 
+::view-transition-old(partner-image),
+::view-transition-new(partner-image) {
+  height: 100%;
+  /* object-fit: none;
+  overflow: clip; */
+  width: auto;
+}
+
+::view-transition-group(partner-image) {
+  overflow: clip;
+}
+
+::view-transition-old(partner-btn),
+::view-transition-new(partner-btn) {
+  height: 100%;
+  width: auto;
+}
+
+::view-transition-group(partner-btn) {
+  overflow: clip;
+}
+
 @keyframes reveal {
   from {
     opacity: 0;

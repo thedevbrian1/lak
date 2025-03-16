@@ -67,7 +67,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body className="font-body bg-[#f5f5f5] 2xl:max-w-[1400px] mx-auto">
         <header
-          className="fixed top-0 left-0 right-0 z-20 2xl:max-w-[1400px] mx-auto"
+          className="fixed top-0 left-0 right-0 z-20 2xl:max-w-[1400px] mx-auto backdrop-blur-md"
           style={{ viewTransitionName: "header" }}
         >
           <div className="bg-brand-purple py-2">
@@ -93,8 +93,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </a>
             </address>
           </div>
-          <nav className="flex items-center justify-between px-3 md:px-6 bg-gray-200/80 backdrop-blur-3xl">
+          <nav className="flex items-center justify-between px-3 md:px-6 bg-gray-200/70">
             <Link to="/">
+              <span className="sr-only">Go to home</span>
               <img
                 src="/logo.png"
                 alt=""

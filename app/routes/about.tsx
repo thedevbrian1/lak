@@ -12,6 +12,11 @@ export function meta() {
     {
       title: "About | LAK Advocates",
     },
+    {
+      name: "description",
+      content:
+        "LAK Advocates is a full-service law firm in Kenya, led by partners Eunice Lumallas, and  Paulette Achieng'. We specialize in dispute resolution, conveyancing, company secretarial, and commercial law, with a mission to provide high-quality, innovative, and client-focused legal services.",
+    },
   ];
 }
 
@@ -102,19 +107,19 @@ export default function About({ loaderData }: Route.ComponentProps) {
                 to={`/partners/${item.slug.current}`}
                 prefetch="intent"
                 viewTransition
-                className=""
+                className="group"
               >
                 <div className="relative after:absolute after:-inset-4 after:w-full after:h-full after:bg-[#B668D6] after:-z-10 after:rounded-lg">
                   <img
                     src={urlFor(item.image)?.width(550).auto("format").url()}
                     alt={`Image of ${item.name}`}
-                    className="h-72 w-full max-w-lg lg:max-w-none object-cover object-top lg:h-auto aspect-[3/4] lg:object-center rounded-lg"
+                    className="h-72 w-full max-w-lg lg:max-w-none object-cover object-top lg:h-auto aspect-[3/4] lg:object-center hover:scale-105 transition ease-in-out duration-300 rounded-lg"
                     loading="lazy"
                   />
                 </div>
                 <p className="mt-4 font-semibold">{item.name}</p>
                 <p className="mt-2 text-gray-700">{item.role}</p>
-                <span className="flex gap-2 items-center bg-brand-purple group  px-4 py-2 rounded-md max-w-fit text-white mt-2 text-sm">
+                <span className="flex gap-2 items-center bg-brand-purple group  px-4 py-2 rounded-md max-w-fit text-white mt-2 text-sm group-active:scale-[.97] transition ease-in-out duration-300">
                   View more{" "}
                   <span className="group-hover:translate-x-1 transition-all ease-in-out duration-300">
                     <ArrowRight />

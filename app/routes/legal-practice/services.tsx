@@ -6,6 +6,11 @@ export function meta() {
     {
       title: "Legal practice | LAK Advocates",
     },
+    {
+      name: "description",
+      content:
+        "At Lumallas Achieng' & Kavere Advocates (LAK Advocates), we offer a comprehensive range of legal services tailored to meet the diverse needs of our clients. Our practice areas include: International & Local Litigation: Representing clients in both domestic and international courts to resolve disputes effectively, International Arbitration Practice: Providing expert arbitration services for cross-border commercial conflicts, International Trade & Investment Law: Advising on global trade regulations and investment strategies, Commercial Law & Corporate Governance: Assisting businesses with legal compliance, corporate structuring, and governance matters, Immigration: Offering guidance on immigration policies and visa applications, Intellectual Property: Protecting and managing intellectual property rights, including trademarks and copyrights. Our team is dedicated to delivering innovative and client-focused legal solutions.",
+    },
   ];
 }
 

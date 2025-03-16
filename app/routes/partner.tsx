@@ -13,6 +13,15 @@ export function headers({ loaderHeaders }: Route.HeadersArgs) {
   };
 }
 
+export function meta({ data }: Route.MetaArgs) {
+  let { partner } = data;
+  return [
+    {
+      title: `${partner[0].name} | LAK Advocates`,
+    },
+  ];
+}
+
 export async function loader({ params }: Route.LoaderArgs) {
   let { slug } = params;
 
