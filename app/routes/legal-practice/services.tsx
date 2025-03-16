@@ -1,5 +1,8 @@
+import type { SanityDocument } from "@sanity/client";
 import { Link, NavLink } from "react-router";
+import { client, urlFor } from "~/sanity/client";
 import { services } from "~/utils/services";
+import type { Route } from "./+types/services";
 
 export function meta() {
   return [
@@ -14,7 +17,18 @@ export function meta() {
   ];
 }
 
-export default function LegalServices() {
+export async function loader() {
+  let services = await client.fetch<SanityDocument>(
+    `*[_type == 'legalService']{_id, slug{current}, image, name} `
+  );
+  return { services };
+}
+
+export default function LegalServices({ loaderData }: Route.ComponentProps) {
+  let { services } = loaderData;
+  console.log({ services });
+  // return null;
+
   return (
     <main className="mt-56 lg:mt-64 px-6 md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto">
       <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-center font-heading">
@@ -29,21 +43,18 @@ export default function LegalServices() {
         {services.map((item) => (
           <li key={item.id} className="fade-in">
             <NavLink
-              to={`/legal-practice/${item.title
-                .toLowerCase()
-                .split(" ")
-                .join("-")}`}
+              to={`/legal-practice/${item.slug.current}`}
               prefetch="intent"
               className="flex flex-col gap-2"
               viewTransition
             >
               <h2 className="order-1 font-semibold hover:underline">
-                {item.title}
+                {item.name}
               </h2>
               <div className="h-52 lg:h-72 relative after:absolute after:-inset-4 after:w-full after:h-full after:bg-[#B668D6] after:-z-10 after:rounded-lg ml-4 lg:ml-0">
                 <img
-                  src={item.imageSrc}
-                  alt={`Image of ${item.title}`}
+                  src={urlFor(item.image)?.width(550).auto("format").url()}
+                  alt={`Image of ${item.name}`}
                   className="w-full h-full object-cover hover:scale-105 transition ease-in-out duration-300 rounded-lg"
                   loading="lazy"
                 />
