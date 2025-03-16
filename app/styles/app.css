@@ -195,11 +195,15 @@ body {
   view-transition-name: partner-image;
 }
 
-.partner a.transitioning .partner-name {
+.partner a.transitioning p:nth-of-type(1) {
   view-transition-name: partner-name;
 }
 
-.partner a.transitioning a > span {
+.partner a.transitioning p:nth-of-type(2) {
+  view-transition-name: partner-role;
+}
+
+.partner a.transitioning > div::after {
   view-transition-name: partner-btn;
 }
 
@@ -209,6 +213,10 @@ body {
 
 .partner-detail img {
   view-transition-name: partner-image;
+}
+
+.partner-detail .partner-role {
+  view-transition-name: partner-role;
 }
 
 .partner-detail .partner-img::after {

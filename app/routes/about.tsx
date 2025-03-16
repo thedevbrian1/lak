@@ -37,23 +37,6 @@ export async function loader() {
 
 export default function About({ loaderData }: Route.ComponentProps) {
   let { partners } = loaderData;
-  console.log({ partners });
-
-  let team = [
-    {
-      id: 1,
-      name: "Eunice Lumallas",
-      title: "Partner",
-      imageSrc: "/LUMALLASPHOTO.jpg",
-    },
-    {
-      id: 2,
-      name: "Paulette Achieng",
-      title: "Partner",
-      imageSrc:
-        "https://res.cloudinary.com/organic-zones/image/upload/q_auto,f_auto/v1741703202/lak/paulette_ntmtg2.png",
-    },
-  ];
   return (
     <main className="px-6 mt-56 lg:mt-64 md:max-w-xl lg:max-w-4xl xl:max-w-6xl mx-auto">
       <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-center font-heading">
@@ -111,7 +94,7 @@ export default function About({ loaderData }: Route.ComponentProps) {
           Meet our team
         </h2>
         {/* Team members */}
-        <ul className="mt-8 grid md:grid-cols-2 gap-6 lg:max-w-xl lg:mx-auto">
+        <ul className="mt-8 grid md:grid-cols-2 gap-12 lg:max-w-xl lg:mx-auto">
           {partners.map((item) => (
             <li key={item._id} className="fade-in partner">
               <NavLink
@@ -120,12 +103,14 @@ export default function About({ loaderData }: Route.ComponentProps) {
                 viewTransition
                 className=""
               >
-                <img
-                  src={urlFor(item.image)?.width(550).auto("format").url()}
-                  alt={`Image of ${item.name}`}
-                  className="h-72 w-full max-w-lg lg:max-w-none object-cover object-top lg:h-auto aspect-[3/4] lg:object-center rounded-lg"
-                />
-                <p className="mt-4 font-semibold partner-name">{item.name}</p>
+                <div className="relative after:absolute after:-inset-4 after:w-full after:h-full after:bg-[#B668D6] after:-z-10 after:rounded-lg">
+                  <img
+                    src={urlFor(item.image)?.width(550).auto("format").url()}
+                    alt={`Image of ${item.name}`}
+                    className="h-72 w-full max-w-lg lg:max-w-none object-cover object-top lg:h-auto aspect-[3/4] lg:object-center rounded-lg"
+                  />
+                </div>
+                <p className="mt-4 font-semibold">{item.name}</p>
                 <p className="mt-2 text-gray-700">{item.role}</p>
                 <span className="flex gap-2 items-center bg-brand-purple group  px-4 py-2 rounded-md max-w-fit text-white mt-2 text-sm">
                   View more{" "}

@@ -7,8 +7,6 @@ import { data, useNavigate } from "react-router";
 import { Button } from "~/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 
-const PARTNER_QUERY = "*[_type == 'partner'] {_id, name, role, image}";
-
 export function headers({ loaderHeaders }: Route.HeadersArgs) {
   return {
     "Cache-Control": loaderHeaders.get("Cache-Control"),
@@ -39,7 +37,6 @@ export async function loader({ params }: Route.LoaderArgs) {
 
 export default function Partner({ loaderData }: Route.ComponentProps) {
   let { partner } = loaderData;
-  console.log({ partner });
 
   let navigate = useNavigate();
 
@@ -86,7 +83,7 @@ export default function Partner({ loaderData }: Route.ComponentProps) {
               <Facebook name={partner[0].name} />
             </a>
           </div>
-          <p className="mt-4 text-lg font-semibold text-gray-800">
+          <p className="mt-4 text-lg font-semibold text-gray-800 partner-role">
             {partner[0].role}
           </p>
           <div className="prose mt-8">
