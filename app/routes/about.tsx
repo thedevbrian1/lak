@@ -109,11 +109,11 @@ export default function About({ loaderData }: Route.ComponentProps) {
                 viewTransition
                 className="group"
               >
-                <div className="relative after:absolute after:-inset-4 after:w-full after:h-full after:bg-[#B668D6] after:-z-10 after:rounded-lg">
+                <div className="relative after:absolute after:-inset-4 after:w-full after:h-full after:bg-[#B668D6] after:-z-10 after:rounded-lg aspect-[3/4]">
                   <img
                     src={urlFor(item.image)?.width(550).auto("format").url()}
                     alt={`Image of ${item.name}`}
-                    className="h-72 w-full max-w-lg lg:max-w-none object-cover object-top lg:h-auto aspect-[3/4] lg:object-center hover:scale-105 transition ease-in-out duration-300 rounded-lg"
+                    className=" w-full h-full object-cover object-center hover:scale-105 transition ease-in-out duration-300 rounded-lg"
                     loading="lazy"
                   />
                 </div>

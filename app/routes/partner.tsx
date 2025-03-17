@@ -101,12 +101,12 @@ export default function Partner({ loaderData }: Route.ComponentProps) {
             )}
           </div>
         </div>
-        <div className="relative after:absolute after:-inset-4 after:w-full after:h-full after:bg-[#B668D6] after:-z-10 after:rounded-lg max-h-fit partner-img">
+        <div className="relative after:absolute after:-inset-4 after:w-full after:h-full after:bg-[#B668D6] after:-z-10 after:rounded-lg aspect-[3/4] partner-img">
           {postImageUrl && (
             <img
               src={postImageUrl}
               alt=""
-              className="w-full h-64 md:h-96 object-cover object-center rounded-lg"
+              className="w-full h-full object-cover object-center rounded-lg"
             />
           )}
         </div>
