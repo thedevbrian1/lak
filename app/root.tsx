@@ -169,6 +169,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
                       className={({ isActive }) =>
                         `${isActive ? "text-brand-purple" : ""}`
                       }
+                      onClick={(e) => {
+                        document.getElementById("mobile-menu")?.hidePopover();
+                      }}
                     >
                       {item.title}
                     </NavLink>
