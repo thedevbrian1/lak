@@ -10,11 +10,12 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
-// import "./styles/app.css";
 
 import tailwindStyles from "./styles/app.css?url";
 import { Menu, X } from "lucide-react";
 import { services } from "./utils/services";
+import { useEffect } from "react";
+import anchorPolyfill from "@oddbird/css-anchor-positioning/fn";
 
 let navLinks = [
   {
@@ -57,6 +58,24 @@ export const links: Route.LinksFunction = () => [
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    if (
+      typeof window !== "undefined" &&
+      !("anchorName" in document.documentElement.style)
+    ) {
+      anchorPolyfill()
+        .then(() => {
+          console.log("CSS Anchor Positioning polyfill applied");
+        })
+        .catch((error) => {
+          console.error(
+            "Failed to apply CSS Anchor Positioning polyfill:",
+            error
+          );
+        });
+    }
+  }, []);
+
   return (
     <html lang="en">
       <head>
