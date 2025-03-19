@@ -323,15 +323,18 @@ body {
 #mobile-menu {
   position-anchor: --mobile-btn;
   /* position-area: block-end; */
-  inset: auto;
+  /* inset: unset;
   right: anchor(right);
-  top: anchor(bottom);
+  top: anchor(bottom); */
 }
 
 #mobile-menu:popover-open {
   width: 200px;
   /* height: 100px; */
-  /* position: absolute; */
+  position: fixed;
+  inset: unset;
+  top: 0;
+  right: 0;
   /* position-area: block-end; */
   /* top: anchor(bottom); */
 
